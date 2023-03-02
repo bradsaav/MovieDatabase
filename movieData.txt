@@ -1,0 +1,204 @@
+The Shawshank Redemption
+1994
+R
+1
+Drama
+2 22
+1 
+Frank Darabont
+3 
+Tim Robbins
+Morgan Freeman
+Bob Gunton
+The Godfather
+1972
+R
+2
+Crime
+Drama
+2 55
+1
+Francis Ford Coppola
+3
+Marlon Brando
+Al Pacino
+James Caan
+Pulp Fiction
+1994
+R
+2
+Crime
+Drama
+2 34
+1
+Quentin Tarantino
+3
+John Travolta
+Uma Thurman
+Samuel L. Jackson
+The Lord of the Rings: The Fellowship of the Ring
+2001
+PG-13
+3
+Action
+Adventure
+Drama
+2 58
+1
+Peter Jackson
+3
+Elijah Wood
+Ian McKellen
+Orlando Bloom
+Interstellar
+2014
+PG-13
+3
+Adventure
+Drama
+Sci-Fi
+2 49
+1
+Christopher Nolan
+3
+Matthew McConaughey
+Anne Hathaway
+Jessica Chastain
+Avengers: Endgame
+2019
+PG-13
+3
+Action
+Adventure
+Drama
+3 1
+2
+Anthony Russo
+Joe Russo
+3
+Robert Downey Jr.
+Chris Evans
+Mark Ruffalo
+Top Gun: Maverick
+2022
+PG-13
+2
+Action
+Drama
+2 10
+1
+Joseph Kosinski
+3
+Tom Cruise
+Jennifer Connelly
+Miles Teller
+Barbarian
+2022
+R
+3
+Horror
+Mystery
+Thriller
+1 42
+1
+Zach Cregger
+3
+Georgina Campbell
+Bill Skarsgard
+Justin Long
+Fight Club
+1999
+R
+1
+Drama
+2 19
+1
+David Fincher
+3
+Brad Pitt
+Edward Norton
+Meat Loaf
+Mulan
+1998
+G
+3
+Animation
+Adventure
+Comedy
+1 27
+2
+Tony Bancroft
+Barry Cook
+3
+Ming-Na Wen
+Eddie Murphy
+BD Wong
+Step Brothers
+2008
+R
+1
+Comedy
+1 38
+1
+Adam Mckay
+3
+Will Ferrell
+John C. Reilly
+Mary Steenburgen
+Talladega Nights: The Ballad of Ricky Bobby
+2006
+PG-13
+2
+Comedy
+Sport
+1 48
+1
+Adam Mckay
+3
+Will Ferrell
+John C. Reilly
+Sacha Baron Cohen
+Shrek
+2001
+PG
+3
+Animation
+Adventure
+Comedy
+1 30
+2
+Andrew Adamson
+Vicky Jenson
+3
+Mike Myers
+Eddie Murphy
+Cameron Diaz
+The Mask
+1994
+PG-13
+3
+Action
+Comedy
+Crime
+1 41
+1
+Cuck Russell
+3
+Jim Carrey
+Cameron Diaz
+Peter Riegert
+Sin City
+2005
+R
+2
+Crime
+Thriller
+2 4
+3
+Frank Miller
+Quentin Tarantino
+Robert Rodriguez
+3
+Mickey Rourke
+Clive Owen
+Bruce Willis
