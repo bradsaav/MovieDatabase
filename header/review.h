@@ -1,5 +1,7 @@
 #ifndef REVIEW_H
 #define REVIEW_H
+#include <iostream>
+using namespace std;
 
 class Review {
     private:
@@ -9,23 +11,10 @@ class Review {
 
 
     public:
-    string getReview() {
-        return review;
-    }
-    void setReview(string r) {
-        review = r;
-        
-    }
-    string getScore() {
-        return score;
-    }
-    void setScore(int s) {
-        while(s < 1 || s > 5) {
-            cout << "Please enter a score between 1 to 5." << endl;
-        }
-        score = s;
-    }
-
-
+    Review();
+    string getReview();
+    void setReview(string r);
+    string getScore();
+    void setScore(int s);
 };
 #endif
