@@ -15,11 +15,21 @@
 > * The **inputs** of the project will be the movies and the ratings that the user inputs into their movie list. The outputs of the project should be a selection of movies that would be catered to the user as well as statistics about the user’s movie history.
 
 > * This project will **primarily serve** as a searchable database of movies, a list of previously watched movies, and a recommendation tool.
-
+ 
 ## Class Diagram
- > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
 
 ![Class Diagram 2.0](https://github.com/cs100/final-project-team-of-people/blob/master/UML%20Diagram%202.0.png)
+
+## Class Diagram Description
+> The Movie class creates a movie object. A movie contains a name, a year, genres, directors, and a cast. There exists a composition between Cast_List class and Movie class because a Movie has a unique Cast_List and the deletion of a Movie should delete the unique Cast_List that was generated with it. Movies also contain a list of Reviews. There exists another composition relationship between Movie and Review_List because the deletion of a Movie should delete the list of unique reviews associated with it.
+
+ > The Cast_Member class is a base class for both Actor and Director classes. All cast members, Actors and Directors, have a name, age, and an associated Movie_List that contains the list of movies they are a part of. Movie_List is a class that is a container of Movie objects. There exists a composition between Movie_List and Cast_Member because A Movie_List associated with a deleted Cast_Member cannot stand alone.
+
+> The User class creates a user object. The User can write reviews, search movies, and add movies to a watchlist. The watchlist is an object of type Movie_List. There exists a composition between these two classes because the watchlist is unique to the User and the deletion of the User should permit the deletion of the Movie_List associated with it. There also exists another composition between the User and Review_List because the deletion of User should permit the deletion of the associated Reviews kept in their profile.
+
+> The Review class creates a Review object. Review objects hold a name of the user, an int score of 1 to 5, and a comment about the like/dislike of the Movie the review is about.
+
+> The Review_List, Cast_List, and Movie_List are all classes that create List containers of either Movie, Review, or Cast_Member objects. They are just a vector of the aggregated associated objects.
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
