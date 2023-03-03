@@ -3,6 +3,7 @@
 User::User(std::string user, std::string pass) {
     this->username = user;
     this->password = pass;
+    //user constructor should import data from file
 }
 
 Movie_list User::get_movie_list() {

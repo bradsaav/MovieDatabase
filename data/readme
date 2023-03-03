@@ -1,0 +1,3 @@
+-user lists (reviews and movies) should be saved within this folder
+-the user constructor should read from this file and populate the user watched movie lists and reviews
+when the program is exited, the program should rewrite this file with the updated list
