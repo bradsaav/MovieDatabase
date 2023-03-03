@@ -3,9 +3,9 @@
 using namespace std;
 
 Review::Review(string n, string r, int s) {
-    n = name;
-    r = review;
-    s = score;
+   name = n;
+   review = r;
+   score = s;
 }
 
 string Review::getReview() {
@@ -16,7 +16,7 @@ void Review::editReview(string r) {
     review = r;
         
 }
-string Review::getScore() {
+int Review::getScore() {
     return score;
 }
 void Review::editScore(int s) {

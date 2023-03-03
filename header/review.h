@@ -11,10 +11,10 @@ class Review {
 
 
     public:
-    Review();
+    Review(string n, string r, int s);
     string getReview();
-    void setReview(string r);
-    string getScore();
-    void setScore(int s);
+    void editReview(string r);
+    int getScore();
+    void editScore(int s);
 };
 #endif
