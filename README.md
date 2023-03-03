@@ -27,7 +27,7 @@
 
 > The User class creates a user object. The User can write reviews, search movies, and add movies to a watchlist. The watchlist is an object of type Movie_List. There exists a composition between these two classes because the watchlist is unique to the User and the deletion of the User should permit the deletion of the Movie_List associated with it. There also exists another composition between the User and Review_List because the deletion of User should permit the deletion of the associated Reviews kept in their profile.
 
-> The Review class creates a Review object. Review objects hold a name of the user, an int score of 1 to 5, and a comment about the like/dislike of the Movie the review is about.
+> The Review class creates a Review object. Review objects hold a name of the user, an int score of 1 to 5, and a review about the movie that the user writes providing their thoughts and opinions about any aspect of the movie. 
 
 > The Review_List, Cast_List, and Movie_List are all classes that create List containers of either Movie, Review, or Cast_Member objects. They are just a vector of the aggregated associated objects.
 
