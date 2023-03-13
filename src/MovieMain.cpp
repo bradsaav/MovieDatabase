@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include "../header/Movie_List.hpp"
+#include "../header/MovieList.hpp"
 
 using namespace std;
 

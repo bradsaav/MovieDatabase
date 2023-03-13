@@ -3,16 +3,20 @@
 
 
 #include "CastMember.hpp"
-#include <list>
+#include <vector>
+
+using namespace std;
 
 class CastList {
 	private: 
-		list <CastMember> castList;
+		vector <CastMember> castList;
 
 	public:
 		void print_cast();
 		void addCastMember(CastMember name);
 		void deleteCastMember(string name);
+		CastMember get_CastMember(int index);
+		int get_size();
 
 };
 
