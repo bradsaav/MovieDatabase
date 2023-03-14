@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -22,6 +23,10 @@ int Movie::get_release_year() {
     return year;
 }
 
+string Movie::get_rating() {
+    return rating;
+}
+
 CastList Movie::get_director() const{
     return producer;
 }
@@ -34,12 +39,24 @@ vector <string> Movie::get_genre() const{
     return genre;
 }
 
+int Movie::get_hour() const {
+    return hour;
+}
+
+int Movie::get_minute() const {
+    return min;
+}
+
 void Movie::set_name(string n) {
     name = n;
 }
 
 void Movie::set_year(int y) {
     year = y;
+}
+
+void Movie::set_rating(string r) {
+    rating = r;
 }
 
 void Movie::set_hour(int h) {
@@ -62,57 +79,6 @@ void Movie::set_director(string n, int a) {
 void Movie::set_cast(string n, int a) {
     CastMember c(n, a);
     cast.addCastMember(c);
-}
-
-// movie
-// year
-// rating
-// number in category
-// genre
-// duration: hour minute
-// number in category
-// director
-// number in category
-// cast
-
-void Movie::read_data() {
-    string tempString = "";
-    int tempNum = 0;
-    int i =0;
-
-    getline(cin, name);
-    cin >> year;
-    cin.ignore(256, '\n');
-    getline(cin, rating);
-
-    cin >> tempNum;
-    cin.ignore(256, '\n');
-
-    for (i = 0; i < tempNum; i++) {
-        getline(cin, tempString);
-        genre.push_back(tempString);
-    }
-
-    cin >> hour;
-    cin >> min;
-    cin.ignore(256, '\n');
-
-    cin >> tempNum;
-    cin.ignore(256, '\n');
-
-    for (i = 0; i < tempNum; i++) {
-        getline(cin, tempString);
-        set_director(tempString, 0);
-    }
-
-    cin >> tempNum;
-    cin.ignore(256, '\n');
-
-    for (i = 0; i < tempNum; i++) {
-        getline(cin, tempString);
-        set_cast(tempString, 0);
-    }
-
 }
 
 void Movie::display_movie() {
