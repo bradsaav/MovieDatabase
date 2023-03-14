@@ -7,15 +7,13 @@ using namespace std;
 int main() {
     Movie_List allMovies;
     
-    for (int i = 0; i < 15; i++) {
-        Movie m;
-        m.read_data();
-        allMovies.add_movie(m);
-    }
+    allMovies.read_data();
 
     for (int i = 0; i < allMovies.get_size(); i++) {
-        cout << i + 1 << endl;
+        cout << i + 1 << '.' << endl;
         allMovies.get_movie(i).display_movie();
         cout << endl;
     }
+
+    allMovies.create_MovieDB();
 }

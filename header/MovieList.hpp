@@ -15,6 +15,8 @@ class Movie_List {
         Movie get_movie(int index);
         void remove_movie(string name, int year);
         int get_size();
+        void create_MovieDB();
+        void read_data();
 };
 
 #endif
