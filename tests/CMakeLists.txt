@@ -4,9 +4,7 @@ add_subdirectory(googletest)
 # set(CMAKE_CXX_FLAGS --coverage)
 
 add_executable(test
-    MovieTest.cpp
-    ../src/Movie.cpp
-    ../src/MovieList.cpp
+    CastTest.cpp
     ../src/CastMember.cpp
     ../src/CastList.cpp
     ../src/Review.cpp

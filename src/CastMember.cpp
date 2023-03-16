@@ -17,10 +17,3 @@ int CastMember::get_age() {
     return age;
 }
 
-vector <string> CastMember::get_movies() {
-    return MovieList;
-}
-
-void CastMember::add_movie() {
-
-}

@@ -10,14 +10,11 @@ class CastMember {
     private: 
         string name;
         int age;
-        vector <string> MovieList;
 
     public: 
         CastMember(string name, int age);
         string get_name();
         int get_age();
-        vector <string> get_movies();
-        void add_movie();
 };
 
 #endif
