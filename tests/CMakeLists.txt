@@ -9,6 +9,10 @@ add_executable(test
     ../src/CastList.cpp
     ../src/Review.cpp
     ../src/ReviewList.cpp
+    ReviewTest.cpp
+    ../src/Review.cpp
+    ../src/ReviewList.cpp
 )
+
 
 target_link_libraries(test gtest gtest_main)
