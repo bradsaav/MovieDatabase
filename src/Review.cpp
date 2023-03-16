@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../header/review.h"
+#include "../header/Review.h"
 using namespace std;
 
 Review::Review(string n, string r, int s) {
@@ -24,4 +24,8 @@ void Review::editScore(int s) {
         cout << "Please enter a score between 1 to 5." << endl;
     }
     score = s;
+}
+
+string Review::getName() {
+    return name;
 }

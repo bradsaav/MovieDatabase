@@ -12,6 +12,7 @@ class Review {
 
     public:
     Review(string n, string r, int s);
+    string getname();
     string getReview();
     void editReview(string r);
     int getScore();
