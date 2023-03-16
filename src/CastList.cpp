@@ -1,12 +1,12 @@
 #include "../header/CastList.hpp"
-#include <list>
+#include <vector>
 #include <string>
 #include <iostream>
 
 using namespace std;
 
 void CastList::print_cast() {
-    list <CastMember>::iterator it;
+    vector <CastMember>::iterator it;
 
     for (it = castList.begin(); it != castList.end(); ++it) {
         string name = it->get_name();
@@ -19,11 +19,19 @@ void CastList::addCastMember(CastMember name) {
 }
 
 void CastList::deleteCastMember(string name) {
-    list<CastMember>::iterator it;
+    vector<CastMember>::iterator it;
     for (it = castList.begin(); it != castList.end(); ++it) {
         string cast = it->get_name();
         if (cast == name) {
             castList.erase(it);
         }
     }
+}
+
+CastMember CastList::get_CastMember(int index) {
+    return castList.at(index);
+}
+
+int CastList::get_size() {
+    return castList.size();
 }

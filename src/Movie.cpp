@@ -1,24 +1,18 @@
 #include "../header/Movie.hpp"
+
 #include <vector>
 #include <string>
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
-Movie::Movie(const string& name, int year, const string& rating, const vector <string>& genre, int hour, int min, const vector <string>& cast) {
-    this->name = name;
-    this->year = year;
-    this->rating = rating;
-    this->genre = genre;
-    this->cast = cast;
-}
-
 Movie::Movie() {
-    string name = "";
-    int year = 0;
-    string rating = "";
-    int hour = 0;
-    int min = 0;
+    name = "";
+    year = 0;
+    rating = "";
+    hour = 0;
+    min = 0;
 }
 
 string Movie::get_name() {
@@ -29,16 +23,28 @@ int Movie::get_release_year() {
     return year;
 }
 
-vector <string> Movie::get_director() const{
+string Movie::get_rating() {
+    return rating;
+}
+
+CastList Movie::get_director() const{
     return producer;
 }
 
-vector <string> Movie::get_cast() const{
+CastList Movie::get_cast() const{
     return cast;
 }
 
 vector <string> Movie::get_genre() const{
     return genre;
+}
+
+int Movie::get_hour() const {
+    return hour;
+}
+
+int Movie::get_minute() const {
+    return min;
 }
 
 void Movie::set_name(string n) {
@@ -47,6 +53,10 @@ void Movie::set_name(string n) {
 
 void Movie::set_year(int y) {
     year = y;
+}
+
+void Movie::set_rating(string r) {
+    rating = r;
 }
 
 void Movie::set_hour(int h) {
@@ -61,63 +71,14 @@ void Movie::set_genre(string g) {
     genre.push_back(g);
 }
 
-void Movie::set_director(string d) {
-    producer.push_back(d);
+void Movie::set_director(string n, int a) {
+    CastMember d(n, a);
+    producer.addCastMember(d);
 }
 
-void Movie::set_cast(string c) {
-    cast.push_back(c);
-}
-
-// movie
-// year
-// rating
-// number in category
-// genre
-// duration: hour minute
-// number in category
-// director
-// number in category
-// cast
-
-void Movie::read_data() {
-    string tempString = "";
-    int tempNum = 0;
-    int i =0;
-
-    getline(cin, name);
-    cin >> year;
-    cin.ignore(256, '\n');
-    getline(cin, rating);
-
-    cin >> tempNum;
-    cin.ignore(256, '\n');
-
-    for (i = 0; i < tempNum; i++) {
-        getline(cin, tempString);
-        genre.push_back(tempString);
-    }
-
-    cin >> hour;
-    cin >> min;
-    cin.ignore(256, '\n');
-
-    cin >> tempNum;
-    cin.ignore(256, '\n');
-
-    for (i = 0; i < tempNum; i++) {
-        getline(cin, tempString);
-        producer.push_back(tempString);
-    }
-
-    cin >> tempNum;
-    cin.ignore(256, '\n');
-
-    for (i = 0; i < tempNum; i++) {
-        getline(cin, tempString);
-        cast.push_back(tempString);
-    }
-
+void Movie::set_cast(string n, int a) {
+    CastMember c(n, a);
+    cast.addCastMember(c);
 }
 
 void Movie::display_movie() {
@@ -133,23 +94,23 @@ void Movie::display_cast() {
 
     cout << "Director(s): ";
 
-    for (i = 0; i < producer.size(); ++i) {
-        if (i == producer.size() - 1) {
-            cout << producer.at(i) << endl;
+    for (i = 0; i < producer.get_size(); ++i) {
+        if (i == producer.get_size() - 1) {
+            cout << producer.get_CastMember(i).get_name() << endl;
         }
         else {
-            cout << producer.at(i) << " - ";
+            cout << producer.get_CastMember(i).get_name() << " - ";
         }
     }
 
     cout << "Starring: ";
 
-    for (i = 0; i < cast.size(); ++i) {
-        if (i == cast.size() - 1) {
-            cout << cast.at(i) << endl;
+    for (i = 0; i < cast.get_size(); ++i) {
+        if (i == cast.get_size() - 1) {
+            cout << cast.get_CastMember(i).get_name() << endl;
         }
         else {
-            cout << cast.at(i) << " - ";
+            cout << cast.get_CastMember(i).get_name() << " - ";
         }
     }
 

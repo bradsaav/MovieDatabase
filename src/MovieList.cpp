@@ -1,7 +1,9 @@
-#include "../header/Movie_List.hpp"
+#include "../header/MovieList.hpp"
 
 #include <vector>
 #include <string>
+#include <iostream>
+#include <fstream>
 
 void Movie_List::add_movie(Movie m) {
     movies.push_back(m);
@@ -24,4 +26,107 @@ void Movie_List::remove_movie(string name, int year) {
             return;
         }
     }
+}
+
+void Movie_List::create_MovieDB() {
+    int i = 0;
+    int j = 0;
+    
+    ofstream moviesFile;
+
+    moviesFile.open("data/MovieDB.txt");
+
+    for (i = 0; i < movies.size(); i++) {
+        moviesFile << movies.at(i).get_name() << endl;
+        moviesFile << movies.at(i).get_release_year() << endl;
+        moviesFile << movies.at(i).get_rating() << endl;
+        moviesFile << movies.at(i).get_genre().size() << endl;
+
+        for (j = 0; j < movies.at(i).get_genre().size(); j++) {
+            moviesFile << movies.at(i).get_genre().at(j) << endl;
+        }
+
+        moviesFile << movies.at(i).get_hour() << ' ' << movies.at(i).get_minute() << endl;
+        moviesFile << movies.at(i).get_director().get_size() << endl;
+
+        for (j = 0; j < movies.at(i).get_director().get_size(); j++) {
+            moviesFile << movies.at(i).get_director().get_CastMember(j).get_name() << endl;
+        }
+
+        moviesFile << movies.at(i).get_cast().get_size() << endl;
+
+        for (j = 0; j < movies.at(i).get_cast().get_size(); j++) {
+            moviesFile << movies.at(i).get_cast().get_CastMember(j).get_name() << endl;
+        }
+    }
+
+    moviesFile.close();
+}
+
+// movie
+// year
+// rating
+// number in category
+// genre
+// duration: hour minute
+// number in category
+// director
+// number in category
+// cast
+
+void Movie_List::read_data() {
+    string tempString = "";
+    int tempNum = 0;
+    int i =0;
+
+    ifstream readMovies;
+
+    readMovies.open("data/MovieDB.txt");
+    
+    while (getline(readMovies, tempString)) {
+        Movie m;
+        m.set_name(tempString);
+
+        readMovies >> tempNum;
+        m.set_year(tempNum);
+
+        readMovies.ignore(256, '\n');
+        getline(readMovies, tempString);
+        m.set_rating(tempString);
+
+        readMovies >> tempNum;
+        readMovies.ignore(256, '\n');
+
+        for (i = 0; i < tempNum; i++) {
+            getline(readMovies, tempString);
+            m.set_genre(tempString);
+        }
+
+        readMovies >> tempNum;
+        m.set_hour(tempNum);
+
+        readMovies >> tempNum;
+        m.set_min(tempNum);
+        readMovies.ignore(256, '\n');
+
+        readMovies >> tempNum;
+        readMovies.ignore(256, '\n');
+
+        for (i = 0; i < tempNum; i++) {
+            getline(readMovies, tempString);
+            m.set_director(tempString, 0);
+        }
+
+        readMovies >> tempNum;
+        readMovies.ignore(256, '\n');
+
+        for (i = 0; i < tempNum; i++) {
+            getline(readMovies, tempString);
+            m.set_cast(tempString, 0);
+        }
+
+        movies.push_back(m);
+    }
+
+    readMovies.close();
 }
