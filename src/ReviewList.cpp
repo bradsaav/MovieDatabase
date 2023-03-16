@@ -10,6 +10,7 @@ void ReviewList::add_Review(Review r) {
 
 void ReviewList::remove_Review(string n, string r) {
     vector<Review>::iterator it;
+    
  
     for (auto it = reviews.begin(); it != reviews.end(); ++it) {
         if (it->getName() == n && it->getReview() == r) {
