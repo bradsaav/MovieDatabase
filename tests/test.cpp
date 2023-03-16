@@ -1,5 +1,2 @@
 #include "gtest/gtest.h"
 //#include "gmock/gmock.h"
-#include "../header/User.hpp"
-#include "../header/Movie_list.hpp"
-#include "../header/Review_list.hpp"
