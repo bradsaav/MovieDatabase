@@ -16,8 +16,8 @@ class User {
     public:
         User();
         User(std::string name, std::string pass);
-        Movie_List get_movie_list();
-        Review_List get_review_list();
+        Movie_List & get_movie_list();
+        Review_List & get_review_list();
         std::string print_credentials();
         void save_movie_list();
         void save_review_list();

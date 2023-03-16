@@ -23,7 +23,8 @@ void User::save_movie_list() {
     int j = 0;
     
     ofstream moviesFile;
-    string path = "data/" + username + "Movies.txt";
+    string path = "../data/" + username + "Movies.txt";
+    cout << "Movies saving to: " << path << endl;
     moviesFile.open(path);
 
     moviesFile << password << endl;
@@ -51,6 +52,7 @@ void User::save_movie_list() {
         }
     }
 
+    cout << "Movies saved successfully" << endl;
     moviesFile.close();
 }
 
@@ -60,16 +62,18 @@ void User::save_review_list() {
 
 void User::load_movie_list() {
     string tempString = "";
-    string path = "data/" + username + "Movies.txt";
+    string path = "../data/" + username + "Movies.txt";
     int tempNum = 0;
 
     ifstream readMovieList;
+    cout << "Opening user list at: " << path << endl;
     readMovieList.open(path);
     getline(readMovieList, tempString);
-    if (tempString != password)
+    if (tempString != password) {
+        cout << "Password not equal" << endl;
         readMovieList.close();
         return;
-    readMovieList.ignore(256, '\n');
+    }
     
     while (getline(readMovieList, tempString)) {
         Movie m;
@@ -116,6 +120,7 @@ void User::load_movie_list() {
         watched_movies.add_movie(m);
     }
 
+    cout << "List loaded successfully" << endl;
     readMovieList.close();
 }
 
@@ -123,11 +128,11 @@ void User::load_review_list() {
 
 }
 
-Movie_List User::get_movie_list() {
+Movie_List & User::get_movie_list() {
     return watched_movies;
 }
 
-Review_List User::get_review_list() {
+Review_List & User::get_review_list() {
     return user_reviews;
 }
 

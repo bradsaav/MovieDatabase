@@ -7,7 +7,8 @@
 using namespace std;
 
 int main() {
-    User testUser;
+    //Creating new user
+    /*User testUser;
 
     Movie testMovie;
     testMovie.set_name("TEST123");
@@ -20,8 +21,16 @@ int main() {
     testMovie.set_cast("Romney", 1);
     testMovie.display_movie();
 
+    cout << "Size: " << testUser.get_movie_list().get_size() << endl;
     testUser.get_movie_list().add_movie(testMovie);
+    testUser.get_movie_list().add_movie(testMovie);
+    cout << "Size After: " << testUser.get_movie_list().get_size() << endl;
     testUser.get_movie_list().get_movie(0).display_movie();
-    
-    testUser.save_movie_list();
+
+    testUser.save_movie_list();*/
+
+    //Using existing user
+    User testUser("test", "password");
+    cout << "Size: " << testUser.get_movie_list().get_size() << endl;
+    testUser.get_movie_list().get_movie(0).display_movie();
 }
