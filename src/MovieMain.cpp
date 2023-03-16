@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "../header/MovieList.hpp"
+#include "../header/DisplayRecommendations.hpp"
 
 using namespace std;
 
@@ -35,11 +36,16 @@ int main() {
 
     allMovies.read_data();    
 
-    // for (int i = 0; i < allMovies.get_size(); i++) {
-    //     cout << i + 1 << '.' << endl;
-    //     allMovies.get_movie(i).display_movie();
-    //     cout << endl;
-    // }
+    for (int i = 0; i < allMovies.get_size(); i++) {
+        cout << i + 1 << '.' << endl;
+        allMovies.get_movie(i).display_movie();
+        cout << endl;
+    }
 
     allMovies.create_MovieDB();
+
+    DisplayRecommendations dr;
+    dr.recommendByGenre(allMovies, "Action");
+    dr.recommendByActor(allMovies, "Eddie Murphy");
+    dr.recommendByDirector(allMovies, "Adam Mckay");
 }

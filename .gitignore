@@ -11,3 +11,6 @@ src/CMakeCache.txt
 src/CMakeFiles/
 src/cmake_install.cmake
 tests/test
+tests/CastTest
+tests/MovieTest
+src/Makefile
