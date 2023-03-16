@@ -141,14 +141,16 @@ void Movie_List::read_data() {
     readMovies.close();
 }
 
-Movie Movie_List::search(string name, int year) {
+void Movie_List::search(string name, int year) {
     int i = 0;
     
     for (i = 0; i < movies.size(); i++) {
         if (movies.at(i).get_name() == name && movies.at(i).get_release_year() == year) {
-            return movies.at(i);
+            movies.at(i).display_movie();
+            return;
         }
     }
+    cout << name << " cannot be found." << endl;
 }
 
 Movie_List Movie_List::searchGenre(string g) {
