@@ -33,6 +33,8 @@ class Movie {
         int get_hour() const;
         int get_minute() const;
         double get_score();
+        ReviewList get_reviews();
+        double calculate_score();
         void set_name(string n);
         void set_year(int t);
         void set_rating(string r);

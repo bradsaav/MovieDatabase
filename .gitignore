@@ -7,3 +7,7 @@ tests/CMakeCache.txt
 tests/CMakeFiles/
 tests/cmake_install.cmake
 tests/Makefile
+src/CMakeCache.txt
+src/CMakeFiles/
+src/cmake_install.cmake
+tests/test

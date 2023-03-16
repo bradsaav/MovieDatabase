@@ -34,7 +34,12 @@ void Movie_List::create_MovieDB() {
     
     ofstream moviesFile;
 
-    moviesFile.open("data/MovieDB.txt");
+    moviesFile.open("../data/MovieDB.txt");
+
+    if (!moviesFile.is_open()) {
+        cout << "Failed to open and create MovieDB.txt" << endl;
+        return;
+    }
 
     for (i = 0; i < movies.size(); i++) {
         moviesFile << movies.at(i).get_name() << endl;
@@ -81,7 +86,12 @@ void Movie_List::read_data() {
 
     ifstream readMovies;
 
-    readMovies.open("data/MovieDB.txt");
+    readMovies.open("../data/MovieDB.txt");
+
+    if (!readMovies.is_open()) {
+        cout << "failed to open data/MovieDB.txt" << endl;
+        return;
+    }
     
     while (getline(readMovies, tempString)) {
         Movie m;
@@ -137,7 +147,6 @@ Movie Movie_List::search(string name, int year) {
     for (i = 0; i < movies.size(); i++) {
         if (movies.at(i).get_name() == name && movies.at(i).get_release_year() == year) {
             return movies.at(i);
-            return;
         }
     }
 }
