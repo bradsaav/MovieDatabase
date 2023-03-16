@@ -11,8 +11,26 @@ include_directories(
 )
 
 add_executable(runTests
-    ../src
+    ../src/User.cpp
+    ../src/Movie.cpp
+    ../src/MovieList.cpp
+    ../src/Review.cpp
+    ../src/ReviewList.cpp
+    ../src/CastList.cpp
+    ../src/CastMember.cpp
+    ../src/UserMain.cpp
     test.cpp
+)
+
+add_executable(runUserMain
+    ../src/User.cpp
+    ../src/Movie.cpp
+    ../src/MovieList.cpp
+    ../src/Review.cpp
+    ../src/ReviewList.cpp
+    ../src/CastList.cpp
+    ../src/CastMember.cpp
+    ../src/UserMain.cpp
 )
 
 target_link_libraries(runTests gmock gtest gtest_main)
