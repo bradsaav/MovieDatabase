@@ -6,19 +6,22 @@ User::User(std::string user, std::string pass) {
     //user constructor should import data from file
 }
 
-Movie_list User::get_movie_list() {
+void User::load_movie_list() {
+
+}
+
+void User::load_review_list() {
+
+}
+
+Movie_List User::get_movie_list() {
     return watched_movies;
 }
 
-Review_list User::get_reviews() {
+Review_List User::get_review_list() {
     return user_reviews;
 }
-void User::print_stats() {
-    watched_movies.print_list();
-}
-void User::get_recommendations() {
-    std::cout << "NOT IMPLEMENTED YET" << std::endl;
-}
+
 std::string User::print_credentials() {
     return username + " " + password;
 }
