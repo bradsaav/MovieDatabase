@@ -1,14 +1,18 @@
 #include "../header/ReviewList.hpp"
 
 #include <vector>
-
+#include <string>
 using namespace std;
 
-void ReviewList::add_Review(Review r) {
-    reviews.push_back(r);
+void Review_List::add_review(Review m) {
+    reviews.push_back(m);
 }
 
-void ReviewList::remove_Review(string n, string r) {
+Review Review_List::get_review(int index) {
+    return reviews.at(index);
+}
+
+void Review_List::remove_Review(string n, string r) {
     vector<Review>::iterator it;
     
  
@@ -20,10 +24,7 @@ void ReviewList::remove_Review(string n, string r) {
     }
 }
 
-Review ReviewList::get_Review(int index) {
-    return reviews.at(index);
+int Review_List::get_size() {
+  return reviews.size();
 }
 
-int ReviewList::get_size() {
-    return reviews.size();
-}

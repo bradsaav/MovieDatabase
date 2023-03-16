@@ -1,22 +1,20 @@
-#ifndef REVIEWLIST_HPP
-#define REVIEWLIST_HPP
 
-using namespace std;
+#ifndef __REVIEW_LIST_HPP__
+#define __REVIEW_LIST_HPP__
 
-#include "../header/Review.h"
+#include "Review.hpp"
 
 #include <vector>
+#include <string>
 
-using namespace std;
-
-class ReviewList {
+class Review_List {
     private:
         vector <Review> reviews;
-
+        
     public:
-        void add_Review(Review r);
-        void remove_Review(string n, string r);
-        Review get_Review(int index);
+        void add_review(Review m);
+        Review get_review(int index);
+        void remove_review(string name);
         int get_size();
 };
 
