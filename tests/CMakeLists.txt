@@ -6,13 +6,11 @@ add_subdirectory(googletest)
 add_executable(test
     CastTest.cpp
     MovieTest.cpp
+    ReviewTest.cpp
     ../src/Movie.cpp
     ../src/MovieList.cpp
     ../src/CastMember.cpp
     ../src/CastList.cpp
-    ../src/Review.cpp
-    ../src/ReviewList.cpp
-    ReviewTest.cpp
     ../src/Review.cpp
     ../src/ReviewList.cpp
 )
