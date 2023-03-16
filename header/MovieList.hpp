@@ -18,6 +18,9 @@ class Movie_List {
         void create_MovieDB();
         void read_data();
         Movie search(string name, int year);
+        Movie_List searchGenre(string g);
+        Movie_List searchDirector(string d);
+        Movie_List searchActor(string a);
 };
 
 #endif

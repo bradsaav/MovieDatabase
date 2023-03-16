@@ -177,6 +177,30 @@ CastMember.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/runProgram.dir/build.make CMakeFiles/runProgram.dir/CastMember.cpp.s
 .PHONY : CastMember.cpp.s
 
+DisplayRecommendations.o: DisplayRecommendations.cpp.o
+.PHONY : DisplayRecommendations.o
+
+# target to build an object file
+DisplayRecommendations.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runProgram.dir/build.make CMakeFiles/runProgram.dir/DisplayRecommendations.cpp.o
+.PHONY : DisplayRecommendations.cpp.o
+
+DisplayRecommendations.i: DisplayRecommendations.cpp.i
+.PHONY : DisplayRecommendations.i
+
+# target to preprocess a source file
+DisplayRecommendations.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runProgram.dir/build.make CMakeFiles/runProgram.dir/DisplayRecommendations.cpp.i
+.PHONY : DisplayRecommendations.cpp.i
+
+DisplayRecommendations.s: DisplayRecommendations.cpp.s
+.PHONY : DisplayRecommendations.s
+
+# target to generate assembly for a file
+DisplayRecommendations.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runProgram.dir/build.make CMakeFiles/runProgram.dir/DisplayRecommendations.cpp.s
+.PHONY : DisplayRecommendations.cpp.s
+
 Movie.o: Movie.cpp.o
 .PHONY : Movie.o
 
@@ -312,6 +336,9 @@ help:
 	@echo "... CastMember.o"
 	@echo "... CastMember.i"
 	@echo "... CastMember.s"
+	@echo "... DisplayRecommendations.o"
+	@echo "... DisplayRecommendations.i"
+	@echo "... DisplayRecommendations.s"
 	@echo "... Movie.o"
 	@echo "... Movie.i"
 	@echo "... Movie.s"

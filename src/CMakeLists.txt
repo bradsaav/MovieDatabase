@@ -10,4 +10,5 @@ add_executable(runProgram
     CastList.cpp
     Review.cpp
     ReviewList.cpp
+    DisplayRecommendations.cpp
 )

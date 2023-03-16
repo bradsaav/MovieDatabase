@@ -13,7 +13,6 @@ Movie::Movie() {
     rating = "";
     hour = 0;
     min = 0;
-    score = 0;
 }
 
 string Movie::get_name() {
@@ -46,30 +45,6 @@ int Movie::get_hour() const {
 
 int Movie::get_minute() const {
     return min;
-}
-
-double Movie::get_score() {
-    return score;
-}
-
-ReviewList Movie::get_reviews() {
-    return reviews;
-}
-
-double Movie::calculate_score() {
-    double sum = 0;
-    int i = 0;
-    
-    for (i = 0; i < reviews.get_size(); i++) {
-        sum += reviews.get_Review(i).getScore();
-    }
-
-    if (reviews.get_size() != 0) {
-        return (1.0 * sum / reviews.get_size());
-    }
-    else {
-        return 0.0;
-    }
 }
 
 void Movie::set_name(string n) {
@@ -157,15 +132,5 @@ void Movie::display_genre() {
         else {
             cout << genre.at(i) << " - ";
         }
-    }
-}
-
-void Movie::display_reviews() {
-    int i = 0;
-
-    for (i = 0; i < reviews.get_size(); i++) {
-        cout << reviews.get_Review(i).getName() << ": " << reviews.get_Review(i).getScore() << endl;
-        cout << reviews.get_Review(i).getReview() << endl;
-        cout << endl;
     }
 }

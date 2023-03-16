@@ -150,3 +150,45 @@ Movie Movie_List::search(string name, int year) {
         }
     }
 }
+
+Movie_List Movie_List::searchGenre(string g) {
+    Movie_List m;
+
+    for (int i = 0; i < movies.size(); i++) {
+        for (int j = 0; j < movies.at(i).get_genre().size(); j++) {
+            if (movies.at(i).get_genre().at(j) == g) {
+                m.add_movie(movies.at(i));
+            }
+        }
+    }
+
+    return m;
+}
+
+Movie_List Movie_List::searchDirector(string d) {
+    Movie_List m;
+
+    for (int i = 0; i < movies.size(); i++) {
+        for (int j = 0; j < movies.at(i).get_director().get_size(); j++) {
+            if (movies.at(i).get_director().get_CastMember(j).get_name() == d) {
+                m.add_movie(movies.at(i));
+            }
+        }
+    }
+
+    return m;
+}
+
+Movie_List Movie_List::searchActor(string a) {
+    Movie_List m;
+
+    for (int i = 0; i < movies.size(); i++) {
+        for (int j = 0; j < movies.at(i).get_cast().get_size(); j++) {
+            if (movies.at(i).get_cast().get_CastMember(j).get_name() == a) {
+                m.add_movie(movies.at(i));
+            }
+        }
+    }
+
+    return m;
+}
