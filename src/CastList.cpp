@@ -5,6 +5,14 @@
 
 using namespace std;
 
+CastList::CastList() {
+    castList = {};
+}
+
+vector<CastMember> CastList::getCastList() const {
+    return castList;
+}
+
 void CastList::print_cast() {
     vector <CastMember>::iterator it;
 
@@ -31,6 +39,8 @@ void CastList::deleteCastMember(string name) {
 CastMember CastList::get_CastMember(int index) {
     return castList.at(index);
 }
+
+
 
 int CastList::get_size() {
     return castList.size();

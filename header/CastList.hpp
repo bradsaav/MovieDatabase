@@ -12,6 +12,9 @@ class CastList {
 		vector <CastMember> castList;
 
 	public:
+		
+		CastList();
+		vector<CastMember> getCastList() const;
 		void print_cast();
 		void addCastMember(CastMember name);
 		void deleteCastMember(string name);

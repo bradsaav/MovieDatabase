@@ -20,19 +20,8 @@ string Review::get_review() {
     return review;
 }
 
-void Review::edit_review(string r) {
-    review = r;
-        
-}
 int Review::get_score() {
     return score;
-}
-
-void Review::edit_score(int s) {
-    while(s < 1 || s > 5) {
-        cout << "Please enter a score between 1 to 5." << endl;
-    }
-    score = s;
 }
 
 void Review::print_review() {

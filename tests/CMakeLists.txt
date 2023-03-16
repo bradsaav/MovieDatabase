@@ -22,6 +22,18 @@ add_executable(runTests
     test.cpp
 )
 
+add_executable(test
+    CastTest.cpp
+    MovieTest.cpp
+    ReviewTest.cpp
+    ../src/Movie.cpp
+    ../src/MovieList.cpp
+    ../src/CastMember.cpp
+    ../src/CastList.cpp
+    ../src/Review.cpp
+    ../src/ReviewList.cpp
+)
+
 add_executable(runUserMain
     ../src/User.cpp
     ../src/Movie.cpp
@@ -33,4 +45,6 @@ add_executable(runUserMain
     ../src/UserMain.cpp
 )
 
-target_link_libraries(runTests gmock gtest gtest_main)
+target_link_libraries(runTests test runUserMain gmock gtest gtest_main)
+
+

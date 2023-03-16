@@ -34,7 +34,12 @@ void Movie_List::create_MovieDB() {
     
     ofstream moviesFile;
 
-    moviesFile.open("data/MovieDB.txt");
+    moviesFile.open("../data/MovieDB.txt");
+
+    if (!moviesFile.is_open()) {
+        cout << "Failed to open and create MovieDB.txt" << endl;
+        return;
+    }
 
     for (i = 0; i < movies.size(); i++) {
         moviesFile << movies.at(i).get_name() << endl;
@@ -81,7 +86,12 @@ void Movie_List::read_data() {
 
     ifstream readMovies;
 
-    readMovies.open("data/MovieDB.txt");
+    readMovies.open("../data/MovieDB.txt");
+
+    if (!readMovies.is_open()) {
+        cout << "failed to open data/MovieDB.txt" << endl;
+        return;
+    }
     
     while (getline(readMovies, tempString)) {
         Movie m;
@@ -129,4 +139,56 @@ void Movie_List::read_data() {
     }
 
     readMovies.close();
+}
+
+Movie Movie_List::search(string name, int year) {
+    int i = 0;
+    
+    for (i = 0; i < movies.size(); i++) {
+        if (movies.at(i).get_name() == name && movies.at(i).get_release_year() == year) {
+            return movies.at(i);
+        }
+    }
+}
+
+Movie_List Movie_List::searchGenre(string g) {
+    Movie_List m;
+
+    for (int i = 0; i < movies.size(); i++) {
+        for (int j = 0; j < movies.at(i).get_genre().size(); j++) {
+            if (movies.at(i).get_genre().at(j) == g) {
+                m.add_movie(movies.at(i));
+            }
+        }
+    }
+
+    return m;
+}
+
+Movie_List Movie_List::searchDirector(string d) {
+    Movie_List m;
+
+    for (int i = 0; i < movies.size(); i++) {
+        for (int j = 0; j < movies.at(i).get_director().get_size(); j++) {
+            if (movies.at(i).get_director().get_CastMember(j).get_name() == d) {
+                m.add_movie(movies.at(i));
+            }
+        }
+    }
+
+    return m;
+}
+
+Movie_List Movie_List::searchActor(string a) {
+    Movie_List m;
+
+    for (int i = 0; i < movies.size(); i++) {
+        for (int j = 0; j < movies.at(i).get_cast().get_size(); j++) {
+            if (movies.at(i).get_cast().get_CastMember(j).get_name() == a) {
+                m.add_movie(movies.at(i));
+            }
+        }
+    }
+
+    return m;
 }
