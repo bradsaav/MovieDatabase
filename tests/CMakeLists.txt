@@ -3,17 +3,8 @@ add_subdirectory(googletest)
 
 # set(CMAKE_CXX_FLAGS --coverage)
 
-add_executable(CastTest
+add_executable(test
     CastTest.cpp
-    ../src/Movie.cpp
-    ../src/MovieList.cpp
-    ../src/CastMember.cpp
-    ../src/CastList.cpp
-    ../src/Review.cpp
-    ../src/ReviewList.cpp
-)
-
-add_executable(MovieTest
     MovieTest.cpp
     ../src/Movie.cpp
     ../src/MovieList.cpp
@@ -23,5 +14,4 @@ add_executable(MovieTest
     ../src/ReviewList.cpp
 )
 
-target_link_libraries(CastTest gtest gtest_main)
-target_link_libraries(MovieTest gtest gtest_main)
+target_link_libraries(test gtest gtest_main)
