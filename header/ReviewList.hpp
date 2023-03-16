@@ -1,6 +1,8 @@
 #ifndef REVIEWLIST_HPP
 #define REVIEWLIST_HPP
 
+using namespace std;
+
 #include "../header/Review.h"
 
 #include <vector>
