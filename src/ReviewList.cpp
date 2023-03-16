@@ -20,7 +20,7 @@ void ReviewList::remove_Review(string n, string r) {
 }
 
 Review ReviewList::get_Review(int index) {
-    return reviews.at(i);
+    return reviews.at(index);
 }
 
 int ReviewList::get_size() {

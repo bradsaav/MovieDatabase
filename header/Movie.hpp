@@ -2,6 +2,7 @@
 #define __MOVIE_HPP__
 
 #include "CastList.hpp"
+#include "ReviewList.hpp"
 
 #include <vector>
 #include <string>
@@ -18,6 +19,8 @@ class Movie {
         int min;
         CastList producer;
         CastList cast;
+        ReviewList reviews;
+        double score = 0;
 
     public:
         Movie();
@@ -29,6 +32,7 @@ class Movie {
         vector <string> get_genre() const;
         int get_hour() const;
         int get_minute() const;
+        double get_score();
         void set_name(string n);
         void set_year(int t);
         void set_rating(string r);
@@ -41,6 +45,7 @@ class Movie {
         void display_movie();
         void display_duration();
         void display_genre();
+        void display_reviews();
 };
 
 #endif

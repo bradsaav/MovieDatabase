@@ -17,6 +17,7 @@ class Movie_List {
         int get_size();
         void create_MovieDB();
         void read_data();
+        Movie search(string name, int year);
 };
 
 #endif
