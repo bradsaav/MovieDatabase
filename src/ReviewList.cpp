@@ -17,7 +17,7 @@ void Review_List::remove_Review(string n, string r) {
     
  
     for (auto it = reviews.begin(); it != reviews.end(); ++it) {
-        if (it->getName() == n && it->getReview() == r) {
+        if (it->get_name() == n && it->get_review() == r) {
             reviews.erase(it);
             return;
         }
