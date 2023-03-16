@@ -2,8 +2,6 @@
 
 #include <vector>
 #include <string>
-#include <iostream>
-#include <fstream>
 
 void Review_List::add_review(Review m) {
     reviews.push_back(m);
@@ -22,4 +20,8 @@ void Review_List::remove_review(string name) {
             return;
         }
     }
+}
+
+int Review_List::get_size() {
+    return reviews.size();
 }

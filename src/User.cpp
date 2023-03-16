@@ -9,6 +9,7 @@ User::User(std::string user, std::string pass) {
     this->username = user;
     this->password = pass;
     load_movie_list();
+    load_review_list();
 }
 
 User::User() {
@@ -57,7 +58,20 @@ void User::save_movie_list() {
 }
 
 void User::save_review_list() {
+    ofstream reviewsFile;
+    string path = "../data/" + username + "Reviews.txt";
+    cout << "Reviews saving to: " << path << endl;
+    reviewsFile.open(path);
 
+    reviewsFile << password << endl;
+
+    for (int i = 0; i < user_reviews.get_size(); i++) {
+        reviewsFile << user_reviews.get_review(i).get_name() << endl;
+        reviewsFile << user_reviews.get_review(i).get_review() << endl;
+        reviewsFile << user_reviews.get_review(i).get_score() << endl;
+    }
+    cout << "Reviews saved successfully" << endl;
+    reviewsFile.close();
 }
 
 void User::load_movie_list() {
@@ -125,6 +139,28 @@ void User::load_movie_list() {
 }
 
 void User::load_review_list() {
+    string tempString = "";
+    string path = "../data/" + username + "Reviews.txt";
+    int tempNum = 0;
+
+    ifstream readReviewList;
+    cout << "Opening user list at: " << path << endl;
+    readReviewList.open(path);
+    getline(readReviewList, tempString);
+    if (tempString != password) {
+        cout << "Password not equal" << endl;
+        readReviewList.close();
+        return;
+    }
+    while (getline(readReviewList, tempString)) {
+        Review r;
+        r.set_name(tempString);
+        getline(readReviewList, tempString);
+        r.set_review(tempString);
+        readReviewList >> tempNum;
+        r.set_score(tempNum);
+        user_reviews.add_review(r);
+    }
 
 }
 
