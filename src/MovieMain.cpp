@@ -324,6 +324,9 @@ void menu () {
             cout << endl;
 
             allMovies.search(movieName, movieYear);
+
+            cout << endl;
+
             display_options();
         } else {
             cout << "Invalid menu input. Please input a valid menu option" << endl;
