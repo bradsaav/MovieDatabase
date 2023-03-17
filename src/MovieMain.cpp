@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <ctype.h>
 #include "../header/MovieList.hpp"
 #include "../header/DisplayRecommendations.hpp"
 
@@ -35,9 +36,17 @@ void user_add_Movie (Movie_List& movies) {
     m.set_min(userNum);
 
     cout << "Please enter the number of genres in the Movie." << endl;
-    cin >> userNum;
+    char userNumber;
+    cin >> userNumber;
     cin.ignore(256, '\n');
-    
+
+    while(!isdigit(userNumber)) {
+        cout << userNumber << endl;
+        cout << "Please enter valid number of genres in the Movie." << endl;
+        cin >> userNumber;
+        cin.ignore(256, '\n');
+    }
+    userNum = userNumber - '0';
     for (i = 0; i < userNum; i++) {
         cout << "Please enter one of the Movie's genres." << endl;
         getline(cin, userInput);
@@ -45,9 +54,15 @@ void user_add_Movie (Movie_List& movies) {
     }
 
     cout << "Please enter the number of directors in the Movie." << endl;
-    cin >> userNum;
+    cin >> userNumber;
     cin.ignore(256, '\n');
-    
+    while(!isdigit(userNumber)) {
+        cout << userNumber << endl;
+        cout << "Please enter valid number of directors in the Movie." << endl;
+        cin >> userNumber;
+        cin.ignore(256, '\n');
+    }
+    userNum = userNumber - '0'; 
     for (i = 0; i < userNum; i++) {
         cout << "Please enter one of the Movie's directors." << endl;
         getline(cin, userInput);
@@ -55,9 +70,15 @@ void user_add_Movie (Movie_List& movies) {
     }
 
     cout << "Please enter the number of starring cast in the Movie." << endl;
-    cin >> userNum;
+    cin >> userNumber;
     cin.ignore(256, '\n');
-    
+    while(!isdigit(userNumber)) {
+        cout << userNumber << endl;
+        cout << "Please enter valid number of starring cast in the Movie." << endl;
+        cin >> userNumber;
+        cin.ignore(256, '\n');
+    }
+    userNum = userNumber - '0'; 
     for (i = 0; i < userNum; i++) {
         cout << "Please enter one of the Movie's actors/actresses." << endl;
         getline(cin, userInput);
@@ -71,39 +92,43 @@ void user_add_Movie (Movie_List& movies) {
 
 void recommendMovie(Movie_List& movies) {
     string userInput;
-
-    cout << "Type \'g\' for recommendation by genre" << endl;
-    cout << "Type \'a\' for recommendation by actor" << endl;
-    cout << "Type \'d\' for recommendation by director" << endl;
-
-    cin >> userInput;
-    cin.ignore(256, '\n');
-
-    if (userInput == "g") {
-        string userGenre;
-        cout << "What genre do you like?" << endl;
-        cin >> userGenre;
-        cin.ignore(256, '\n');
-        cout << endl;
-        DisplayRecommendations dr;
-        dr.recommendByGenre(movies, userGenre);
-
-    }
-    if (userInput == "a") {
-        string userActor;
-        cout << "Which actor/actress do you like?" << endl;
-        getline(cin, userActor);
-        cout << endl;
-        DisplayRecommendations dr;
-        dr.recommendByActor(movies, userActor);
-    }
-    if (userInput == "d") {
-        string userDirector;
-        cout << "Which director do you like?" << endl;
-        getline(cin, userDirector);
-        cout << endl;
-        DisplayRecommendations dr;
-        dr.recommendByDirector(movies, userDirector);
+    bool validInput = false;
+    while(!validInput) {
+        cout << "Type \'g\' for recommendation by genre" << endl;
+        cout << "Type \'a\' for recommendation by actor" << endl;
+        cout << "Type \'d\' for recommendation by director" << endl;
+        cin >> userInput;
+        cin.ignore(256, '\n');  
+        if (userInput == "g") {
+            validInput = true;
+            string userGenre;
+            cout << "What genre do you like?" << endl;
+            cin >> userGenre;
+            cin.ignore(256, '\n');
+            cout << endl;
+            DisplayRecommendations dr;
+            dr.recommendByGenre(movies, userGenre);
+        } else if (userInput == "a") {
+            validInput = true;
+            string userActor;
+            cout << "Which actor/actress do you like?" << endl;
+            getline(cin, userActor);
+            cout << endl;
+            DisplayRecommendations dr;
+            dr.recommendByActor(movies, userActor);
+        } else if (userInput == "d") {
+            validInput = true;
+            string userDirector;
+            cout << "Which director do you like?" << endl;
+            getline(cin, userDirector);
+            cout << endl;
+            DisplayRecommendations dr;
+            dr.recommendByDirector(movies, userDirector);
+        } else {
+            cout << "Invalid recommendation input. Please input a valid option" << endl;
+            continue;
+    
+        }
     }
 }
 
@@ -141,35 +166,38 @@ void menu () {
             cout << endl;
             allMovies.create_MovieDB();
             display_options();
-        }
-
-        if (userInput == "v") {
+        } else if (userInput == "v") {
             display_all_movies(allMovies);
             display_options();
-        }
-
-        if (userInput == "r") {
+        } else if (userInput == "r") {
             recommendMovie(allMovies);
             display_options();
-        }
-
-        if (userInput == "s") {
+        } else if (userInput == "s") {
             string userMovie;
             int userYear;
+            
 
             cout << "What Movie are you looking for?" << endl;
-            cin >> userMovie;
+            getline(cin, userMovie);
 
             cout << "What is the Movie's release year?" << endl;
             cin >> userYear;
+            cin.ignore(256, '\n');
 
             cout << endl;
 
             allMovies.search(userMovie, userYear);
             display_options();
+        } else {
+            cout << "Invalid menu input. Please input a valid menu option" << endl;
+            display_options();
+            cin >> userInput;
+            cin.ignore(256, '\n');
+            continue;
         }
 
         cin >> userInput;
+        cin.ignore(256, '\n');
     }
 }
 
