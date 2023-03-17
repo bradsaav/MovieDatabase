@@ -8,15 +8,6 @@
 User::User(std::string user, std::string pass) {
     this->username = user;
     this->password = pass;
-    load_movie_list();
-    load_review_list();
-}
-
-User::User() {
-    cout << "Enter new username and password:" << endl;
-    cin >> this->username;
-    cin >> this->password;
-    cout << print_credentials() << endl;
 }
 
 void User::save_movie_list() {
