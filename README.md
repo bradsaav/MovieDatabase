@@ -71,7 +71,7 @@
  > Once you have cloned the repository, open up your terminal and switch to the src directory by running "cd src". Now that we are in the src directory run    "cmake .", "make", and finally "./runProgram". The program will then ask you for a username, you can type any username you'd like. From there all you       have to do is follow the menu instructions to perform the actions you'd like.
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
- > We tested our program using Google Test and validated our output through Main. We created test for most of our classes in order to validate all the        functions that return a value/object. For the functions that do not return anything, we tested their behavior by creating sample objects/variables and     validating whether the member variables were equivalent to the expected equality through "cout".
+ > We tested our program using Google Test and validated our output through Main. We created test for most of our classes in order to validate all the        functions that return a value/object. We created multiple test suites for each of our classes and for all our functions we created unit tests to ensure that our functions were properly accessing and mutating variables using gtest assertions. For the functions that do not return anything, we tested their behavior by creating sample objects/variables and     validating whether the member variables were equivalent to the expected equality through "cout".
  
  ## Valgrind Run
  ![Valgrind run](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/ValgrindRun.jpg)
