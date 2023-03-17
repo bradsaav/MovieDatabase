@@ -6,7 +6,7 @@
  > Authors: [Adelric Low](https://github.com/AMinus24), [Bradly Saavedra](https://github.com/bradsaav), [Dion Ngo](https://github.com/dngo2401), and [Nathaniel Morales](https://github.com/nathanielmor)
 
 ## Project Description
-> * This **project** is a movie database/recommender. The user will input movies that they have previously watched by adding them into a database of movies, and record the data of the movie. The user will also be able to select a movie in the database and view details such as the name, year, rating, genre, director, and the acting cast that other users or themselves have provided. The user is recommended movies by filtering what they like such as their favorite actors/actresses, genres, or directors. They can also search for a specific movie that is in the database.
+> * This **project** is a movie database/recommender. The user will input movies that they have previously watched by adding them into a database of movies, and record the data of the movie. The user will need to find data from online to input the movie such as the movie name, genre, directors, and length. The user will also be able to select a movie in the database and view details such as the name, year, rating, genre, director, and the acting cast that other users or themselves have provided. The user is recommended movies based on different filtering systems allowing them to find recommendatiosn through their favorite actors/actresses, genres, or directors. They can also search to see if a specific movie is in our database.
 >
 > * This project is **interesting** to us because it seems like a practical application for movie watchers to decide on what they want to view next. 
 >
