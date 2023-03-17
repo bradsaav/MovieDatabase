@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.20)
 # set(CMAKE_CXX_FLAGS --coverage)
 
 add_executable(runProgram
+    User.cpp
     MovieMain.cpp
     Movie.cpp
     MovieList.cpp

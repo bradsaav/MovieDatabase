@@ -18,6 +18,11 @@ void User::save_movie_list() {
     cout << "Movies saving to: " << path << endl;
     moviesFile.open(path);
 
+    if (!moviesFile.is_open()) {
+        cout << "Username does not exist or match." << endl;
+        return;
+    }
+
     for (i = 0; i < watched_movies.get_size(); i++) {
         moviesFile << watched_movies.get_movie(i).get_name() << endl;
         moviesFile << watched_movies.get_movie(i).get_release_year() << endl;
@@ -52,6 +57,11 @@ void User::save_review_list() {
     cout << "Reviews saving to: " << path << endl;
     reviewsFile.open(path);
 
+    if (!reviewsFile.is_open()) {
+        cout << "Username does not exist or match." << endl;
+        return;
+    }
+
     for (int i = 0; i < user_reviews.get_size(); i++) {
         reviewsFile << user_reviews.get_review(i).get_name() << endl;
         reviewsFile << user_reviews.get_review(i).get_review() << endl;
@@ -69,6 +79,11 @@ void User::load_movie_list() {
     ifstream readMovieList;
     cout << "Opening user list at: " << path << endl;
     readMovieList.open(path);
+
+    if (!readMovieList.is_open()) {
+        cout << "Username does not exist or match." << endl;
+        return;
+    }
 
     while (getline(readMovieList, tempString)) {
         Movie m;
@@ -127,6 +142,11 @@ void User::load_review_list() {
     ifstream readReviewList;
     cout << "Opening user list at: " << path << endl;
     readReviewList.open(path);
+
+    if (!readReviewList.is_open()) {
+        cout << "Username does not exist or match." << endl;
+        return;
+    }
 
     while (getline(readReviewList, tempString)) {
         Review r;

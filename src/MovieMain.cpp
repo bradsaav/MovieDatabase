@@ -3,8 +3,47 @@
 #include <ctype.h>
 #include "../header/MovieList.hpp"
 #include "../header/DisplayRecommendations.hpp"
+#include "../header/User.hpp"
 
 using namespace std;
+
+// bool load_Accounts(string username) {
+//     string tempName = "";
+//     string path = "../data/Accounts.txt";
+
+//     ifstream readInfo;
+//     readInfo.open(path);
+
+//     if (!saveInfo.is_open()) {
+//         cout << "Error opening " << path << endl;
+//         return;
+//     }
+
+//     while (getline(readInfo)) {
+//         if (tempName == username) {
+//             return true;
+//         }
+//     }
+
+//     return false;
+// }
+
+// void save_Accounts(string usernamed) {
+//     string path = "../data/Accounts.txt";
+
+//     ofstream saveInfo;
+//     saveInfo.open(path, ios::app);
+
+//     if (!saveInfo.is_open()) {
+//         cout << "Error opening " << path << endl;
+//         return;
+//     }
+
+//     saveInfo << username << endl;
+
+//     saveInfo.close();
+
+// }
 
 void user_add_Movie (Movie_List& movies) {
     Movie m;
@@ -132,11 +171,66 @@ void recommendMovie(Movie_List& movies) {
     }
 }
 
+// void login_option() {
+//     cout << "Type \'e\' for an existing user." << endl;
+//     cout << "Type \'n\' for a new user." << endl;
+//     cout << "Type \'q\' to exit the program." << endl;
+//     cout << endl;
+// }
+
+// void login () {
+//     string userInput = "";
+//     string userUsername = "";
+//     string userPassword = "";
+
+//     cin >> userInput
+//     cin.ignore(256, '\n');
+
+//     while (userInput != "q") {
+//         login_option();
+//         if (userInput == "e") {
+//             cout << "Enter username:" << endl;
+//             getline(cin, userUsername);
+//             cout << "Enter password:" << endl;
+//             getline(cin, userPassword);
+
+//             bool result = load_Accounts(user);
+
+//             if (result == true) {
+
+//             }
+//         }
+//     }
+
+//     User user1(userUsername, userPassword);
+//     user1.load_movie_list();
+// }
+
+void watchlist_options () {
+    cout << "Type \'a\' to add a Movie to your watchlist." << endl;
+    cout << "Type \'v\' to view all Movies." << endl;
+    cout << "Type \'s\' to save watchlist." << endl;
+    cout << "Type \'r\' to remove a movie from watchlist." << endl;
+    cout << "Type \'e\' to exit back to menu." << endl;
+    cout << endl;
+}
+
+void reviewlist_options () {
+    cout << "Type \'a\' to add a review to your review list." << endl;
+    cout << "Type \'v\' to view all reviews." << endl;
+    cout << "Type \'s\' to save your review list." << endl;
+    cout << "Type \'r\' to remove a review from your review list." << endl;
+    cout << "Type \'e\' to exit back to menu." << endl;
+    cout << endl;
+}
+
 void display_options () {
     cout << "Type \'a\' to add a Movie to the DataBase." << endl;
     cout << "Type \'s\' to search for a specific Movie in the DataBase." << endl;
     cout << "Type \'r\' to recommend a Movie to you." << endl;
+    cout << "Type \'c\' to create or load your review list." << endl;
     cout << "Type \'v\' to view all Movies." << endl;
+    cout << "Type \'w\' to create or load a watchlist." << endl;
     cout << "Type \'q\' to exit the program." << endl;
     cout << endl;
 }
@@ -150,6 +244,13 @@ void display_all_movies(Movie_List& allMovies) {
 }
 
 void menu () {
+    string userUsername = "";
+
+    cout << "Enter username:" << endl;
+    getline(cin, userUsername);
+
+    User currUser(userUsername);
+
     Movie_List allMovies;
 
     allMovies.read_data();
@@ -172,21 +273,62 @@ void menu () {
         } else if (userInput == "r") {
             recommendMovie(allMovies);
             display_options();
+        } else if (userInput == "w") {
+            currUser.load_movie_list();
+            watchlist_options();
+            cin >> userInput;
+            cin.ignore(256, '\n');
+
+            while (userInput != "e") {
+                if (userInput == "a") {
+                    user_add_Movie (currUser.get_movie_list());
+                    userInput = "e";
+                } else if (userInput == "v") {
+                    display_all_movies(currUser.get_movie_list());
+                    userInput = "e";
+                } else if (userInput == "s") {
+                    currUser.save_movie_list();
+                    userInput = "e";
+                } else if (userInput == "r") {
+                    string movieName;
+                    int movieYear;
+
+                    cout << "What is the name of the movie?" << endl;
+                    getline(cin, movieName);
+
+                    cout << "What is the release year of the movie?" << endl;
+                    cin >> movieYear;
+                    cin.ignore(256, '\n');
+
+                    cout << endl;
+
+                    currUser.get_movie_list().remove_movie(movieName, movieYear);
+                    userInput = "e";
+                } else {
+                    cout << "Invalid menu input. Please input a valid menu option" << endl;
+                    watchlist_options();
+                    cin >> userInput;
+                    cin.ignore(256, '\n');
+                    continue;
+                }
+            }
+
+            display_options();
+
         } else if (userInput == "s") {
-            string userMovie;
-            int userYear;
-            
+            string movieName;
+            int movieYear;
 
             cout << "What Movie are you looking for?" << endl;
-            getline(cin, userMovie);
+            getline(cin, movieName);
 
             cout << "What is the Movie's release year?" << endl;
-            cin >> userYear;
+            cin >> movieYear;
             cin.ignore(256, '\n');
 
             cout << endl;
 
-            allMovies.search(userMovie, userYear);
+            allMovies.search(movieName, movieYear);
             display_options();
         } else {
             cout << "Invalid menu input. Please input a valid menu option" << endl;

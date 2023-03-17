@@ -16,3 +16,5 @@ tests/MovieTest
 src/Makefile
 tests/runTests
 tests/runUserMain
+data/nteMovies.txt
+data/whatMovies.txt
