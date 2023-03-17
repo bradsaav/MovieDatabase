@@ -159,6 +159,7 @@ void User::load_review_list() {
         r.set_score(tempNum);
         user_reviews.add_review(r);
     }
+    cout << "List loaded successfully" << endl;
 }
 
 Movie_List & User::get_movie_list() {

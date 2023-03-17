@@ -12,12 +12,12 @@ Review Review_List::get_review(int index) {
     return reviews.at(index);
 }
 
-void Review_List::remove_review(string n, string r) {
+void Review_List::remove_review(string n) {
     vector<Review>::iterator it;
     
  
     for (auto it = reviews.begin(); it != reviews.end(); ++it) {
-        if (it->get_name() == n && it->get_review() == r) {
+        if (it->get_name() == n) {
             reviews.erase(it);
             return;
         }

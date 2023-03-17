@@ -14,7 +14,7 @@ class Review_List {
     public:
         void add_review(Review m);
         Review get_review(int index);
-        void remove_review(string n, string r);
+        void remove_review(string n);
         int get_size();
         void review_clear();
 };
