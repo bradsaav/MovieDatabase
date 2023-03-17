@@ -13,9 +13,9 @@ src/cmake_install.cmake
 tests/test
 tests/CastTest
 tests/MovieTest
-src/Makefile
 tests/runTests
 tests/runUserMain
 data/nteMovies.txt
 data/whatMovies.txt
 data/ReeMovies.txt
+src/Makefile

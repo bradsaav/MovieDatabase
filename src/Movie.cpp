@@ -84,6 +84,7 @@ void Movie::set_cast(string n, int a) {
 void Movie::display_movie() {
     cout << get_name() << endl;
     cout << get_release_year() << endl;
+    cout << get_rating() << endl;
     display_genre();
     display_duration();
     display_cast();
