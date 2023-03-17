@@ -66,7 +66,10 @@
  ![View All Movies Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/viewAllMovies.jpg)
  ![Quit Program Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/qExitsProgram.jpg)
  ## Installation/Usage
- > Instructions on installing and running your application
+ > To install the application, run the git clone command and run "git clone --recursive https://github.com/cs100/final-project-team-of-people.git"
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ 
+ ## Valgrind Run
+ ![Valgrind run](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/ValgrindRun.jpg)
  
