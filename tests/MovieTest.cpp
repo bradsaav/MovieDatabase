@@ -1,7 +1,11 @@
 #include "gtest/gtest.h"
 //#include "gmock/gmock.h"
+#include <vector>
+#include <string>
 #include "../header/Movie.hpp"
 #include "../header/MovieList.hpp"
+
+using namespace std;
 
 TEST (MovieTests, testConstructorAndGetter) {
     Movie m;
@@ -101,4 +105,56 @@ TEST (MovieTests, removeMovieTest) {
     ml.remove_movie(m.get_name(), m.get_release_year());
 
     EXPECT_EQ(ml.get_size(), 0);
+}
+
+TEST(MovieTests, searchGenre) {
+    Movie m;
+    Movie_List ml;
+
+    EXPECT_EQ(ml.get_size(), 0);
+
+    m.set_name("Indiana Jones and the Raiders of the Lost Ark");
+    m.set_year(1981);
+    m.set_rating("PG");
+    m.set_hour(1);
+    m.set_min(55);
+    m.set_genre("Action");
+    m.set_genre("Adventure");
+    m.set_director("Steven Spielberg", 76);
+    m.set_cast("Harrison Ford", 81);
+    m.set_cast("Karen Allen", 71);
+    m.set_cast("Paul Freeman", 80);
+
+    ml.add_movie(m);
+    Movie_List test = ml.searchGenre("Action");
+    Movie movieTest = test.get_movie(0);
+    CastList list = movieTest.get_director();
+    string director = list.get_CastMember(0).get_name();
+    EXPECT_TRUE( director == "Steven Spielberg");
+}
+
+TEST(MovieTests, searchDirector) {
+    Movie m;
+    Movie_List ml;
+
+    EXPECT_EQ(ml.get_size(), 0);
+
+    m.set_name("Indiana Jones and the Raiders of the Lost Ark");
+    m.set_year(1981);
+    m.set_rating("PG");
+    m.set_hour(1);
+    m.set_min(55);
+    m.set_genre("Action");
+    m.set_genre("Adventure");
+    m.set_director("Steven Spielberg", 76);
+    m.set_cast("Harrison Ford", 81);
+    m.set_cast("Karen Allen", 71);
+    m.set_cast("Paul Freeman", 80);
+
+    ml.add_movie(m);
+    Movie_List test = ml.searchDirector("Steven Spielberg");
+    Movie movieTest = test.get_movie(0);
+    CastList list = movieTest.get_director();
+    string director = list.get_CastMember(0).get_name();
+    EXPECT_TRUE( director == "Steven Spielberg");
 }
