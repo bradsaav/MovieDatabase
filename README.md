@@ -64,7 +64,7 @@
  ![Review List Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/reviewlistmenu.jpg)
  ![Recommender Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/watchlistmenu.jpg)
  ![View All Movies Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/viewAllMovies.jpg)
- ![Quit Program Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/viewAllMovies.jpg)
+ ![Quit Program Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/qExitsProgram.jpg)
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing
