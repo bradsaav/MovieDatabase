@@ -57,6 +57,14 @@
  
  ## Screenshots
  > Screenshots of the input/output after running your application
+ ![Start Login](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/FirstInput.jpg)
+ ![Add Movie Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/AddMovieToDB.jpg)
+ ![Search Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/SearchInput.jpg)
+ ![Recommender Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/RecommenderPart.jpg)
+ ![Review List Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/reviewlistmenu.jpg)
+ ![Recommender Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/watchlistmenu.jpg)
+ ![View All Movies Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/viewAllMovies.jpg)
+ ![Quit Program Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/viewAllMovies.jpg)
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing
