@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
 #include "../header/Review.hpp"
 #include "../header/ReviewList.hpp"
+#include <sstream>
 
 TEST (ReviewTests, ReviewConstructorAndGetter) {
     Review aReview("Brad", "Amazing movie!", 5);
@@ -30,3 +31,26 @@ TEST(ReviewTests, ReviewTestEdit) {
 }
 
 
+TEST(ReviewTests, testPrint) {
+    Review review("Test Restaurant", "Test Review", 5);
+
+    std::stringstream buffer;
+    std::streambuf* old = std::cout.rdbuf(buffer.rdbuf());
+
+    review.print_review();
+
+    std::cout.rdbuf(old);
+
+
+    std::string expected_output = "Test Restaurant\nTest Review\n5\n";
+    std::string actual_output = buffer.str();
+    EXPECT_EQ(actual_output, expected_output);
+}
+
+TEST(ReviewTests, testName) {
+    Review review("Test Name", "Test Review" , 4);
+
+    review.set_score(3);
+    int newScore = review.get_score();
+    EXPECT_EQ(newScore, 3);
+}
