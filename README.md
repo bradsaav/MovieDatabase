@@ -6,19 +6,19 @@
  > Authors: [Adelric Low](https://github.com/AMinus24), [Bradly Saavedra](https://github.com/bradsaav), [Dion Ngo](https://github.com/dngo2401), and [Nathaniel Morales](https://github.com/nathanielmor)
 
 ## Project Description
-> * This **project** is a movie database/recommender. The user will input the movies that they have previously watched by searching through a database of movies, and record the rating of the movie. The user will also be able to select a movie in the database and view details such as the overall rating from other users or the acting cast. Based on the movies that the user has watched as well as their rating, the movie recommender will present a selection of movies that may be a good fit for the user.
+> * This **project** is a movie database/recommender. The user will input movies that they have previously watched by adding them into a database of movies, and record the data of the movie. The user will also be able to select a movie in the database and view details such as the name, year, rating, genre, director, and the acting cast that other users or themselves have provided. The user is recommended movies by filtering what they like such as their favorite actors/actresses, genres, or directors. They can also search for a specific movie that is in the database.
 >
 > * This project is **interesting** to us because it seems like a practical application for movie watchers to decide on what they want to view next. 
 >
-> * We will **use** C++ to import a list of movies as well as other data such as ratings or acting cast. The user will be able to sort through this list based on desired parameters. The user will also enter information about the movies they have watched, which will be stored in their movies list. This list is used to calculate potential movies that would be recommended to the user. An algorithm will read the list and calculate an average value of features, weighing the movie less if the user rated the movie poorly. Based on this average, the algorithm will return movies which are closest to the user’s average.  If we decide on implementing a GUI, we can utilize a GUI library to program it.
+> * We will **use** C++ to import a list of movies as well as other data such as ratings or acting cast. The user will be able to sort through this list based on desired parameters. The user will also enter information about the movies they have watched, which will be stored in their movies list. This list is used so the user can recall what movies they plan to watch for every execution of the program. An algorithm will ask the user what kind of movies they like abd would recommend movies of the categories that the user chooses.
 >
-> * The **inputs** of the project will be the movies and the ratings that the user inputs into their movie list. The outputs of the project should be a selection of movies that would be catered to the user as well as statistics about the user’s movie history.
+> * The **inputs** of the project will be the movies and reviewa that the user inputs into their movie list. The outputs of the project should be a selection of movies that would be catered to the user as well as data on the user's previous visits.
 
 > * This project will **primarily serve** as a searchable database of movies, a list of previously watched movies, and a recommendation tool.
  
-## Class Diagram
+## Class Diagram v4.0
 
-![Class Diagram 3.0](https://github.com/cs100/final-project-team-of-people/blob/master/UML%20Diagram%203.0.png)
+![Class Diagram 4.0](https://github.com/cs100/final-project-team-of-people/blob/master/UML%20Diagram%204.0.png)
 
 ## Class Diagram Description
 > The Movie class creates a movie object. A movie contains a name, a year, genres, directors, and a cast. There exists a composition between CastList class and Movie class because a Movie has a unique CastList and the deletion of a Movie should delete the unique CastList that was generated with it.
