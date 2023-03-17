@@ -45,6 +45,24 @@ using namespace std;
 
 // }
 
+void user_add_Review (Review_List& reviews) {
+    string reviewMovie;
+    string reviewContent;
+    int reviewScore;
+
+    cout << "What is the name of the Movie you want to write a review for?" << endl;
+    getline(cin, reviewMovie);
+
+    cout << "Write the contents of the review." << endl;
+    getline(cin, reviewContent);
+
+    cout << "Enter a score from 1 - 5." << endl;
+    cin >> userNum;
+    cin.ignore(256, '\n');
+
+    Review r(string n, string r, int s);
+}
+
 void user_add_Movie (Movie_List& movies) {
     Movie m;
     string userInput;
@@ -206,6 +224,8 @@ void recommendMovie(Movie_List& movies) {
 //     user1.load_movie_list();
 // }
 
+void add_review
+
 void watchlist_options () {
     cout << "Type \'a\' to add a Movie to your watchlist." << endl;
     cout << "Type \'v\' to view all Movies." << endl;
@@ -273,8 +293,9 @@ void menu () {
         } else if (userInput == "r") {
             recommendMovie(allMovies);
             display_options();
+        } else if (userInput == "c"){
+            reviewlist_options();
         } else if (userInput == "w") {
-            currUser.load_movie_list();
             watchlist_options();
             cin >> userInput;
             cin.ignore(256, '\n');

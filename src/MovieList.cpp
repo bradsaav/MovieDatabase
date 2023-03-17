@@ -194,3 +194,7 @@ Movie_List Movie_List::searchActor(string a) {
 
     return m;
 }
+
+void Movie_List::movie_clear() {
+    movies.clear();
+}

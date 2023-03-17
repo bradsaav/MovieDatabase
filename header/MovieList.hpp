@@ -21,6 +21,7 @@ class Movie_List {
         Movie_List searchGenre(string g);
         Movie_List searchDirector(string d);
         Movie_List searchActor(string a);
+        void movie_clear();
 };
 
 #endif

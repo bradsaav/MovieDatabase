@@ -72,6 +72,7 @@ void User::save_review_list() {
 }
 
 void User::load_movie_list() {
+    watched_movies.movie_clear();
     string tempString = "";
     string path = "../data/" + username + "Movies.txt";
     int tempNum = 0;
@@ -135,6 +136,7 @@ void User::load_movie_list() {
 }
 
 void User::load_review_list() {
+    user_reviews.review_clear();
     string tempString = "";
     string path = "../data/" + username + "Reviews.txt";
     int tempNum = 0;

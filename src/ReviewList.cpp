@@ -28,3 +28,6 @@ int Review_List::get_size() {
   return reviews.size();
 }
 
+void Review_List::review_clear() {
+    reviews.clear();
+}
