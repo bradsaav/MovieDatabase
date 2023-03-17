@@ -56,14 +56,22 @@
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ > Screenshots of the input/output after running our application
+ > Starting Menu for User:
  ![Start Login](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/FirstInput.jpg)
+ > Adding a movie that the user has watched to the database 
  ![Add Movie Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/AddMovieToDB.jpg)
+ > Searching if a specific movie is in the database:
  ![Search Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/SearchInput.jpg)
+ > Recommending movies based on selected criteria:
  ![Recommender Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/RecommenderPart.jpg)
+ > Creating or loading review list:
  ![Review List Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/reviewlistmenu.jpg)
+ > Creating or loading watch list:
  ![Recommender Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/watchlistmenu.jpg)
+ > Viewing all movies:
  ![View All Movies Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/viewAllMovies.jpg)
+ > Quitting Program:
  ![Quit Program Option](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/qExitsProgram.jpg)
  ## Installation/Usage
  
