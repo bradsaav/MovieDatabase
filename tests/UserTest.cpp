@@ -15,7 +15,17 @@ TEST(UserTests, CreateNewUser) {
     testMovie.set_director("Obama", 1);
     testMovie.set_cast("Romney", 1);
     testUser.get_movie_list().add_movie(testMovie);
-    EXPECT_EQ(testUser.get_movie_list().get_size(), 1);
+    testUser.get_movie_list().add_movie(testMovie);
+    EXPECT_EQ(testUser.get_movie_list().get_size(), 2);
+    EXPECT_EQ(testUser.get_movie_list().get_movie(0).get_name(), "TEST123");
+
+    Review testReview("Titanic", "Very sad. I cried. What a sad movie.", 5);
+    testUser.get_review_list().add_review(testReview);
+    EXPECT_EQ(testUser.get_review_list().get_size(), 1);
+    EXPECT_EQ(testUser.get_review_list().get_review(0).get_name(), "Titanic");
+    EXPECT_EQ(testUser.get_review_list().get_review(0).get_review(), "Very sad. I cried. What a sad movie.");
+    EXPECT_EQ(testUser.get_review_list().get_review(0).get_score(), 5);
+
 }
 
 TEST(UserTests, LoadNewUser) {
