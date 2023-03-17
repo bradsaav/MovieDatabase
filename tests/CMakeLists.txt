@@ -4,31 +4,11 @@ cmake_minimum_required(VERSION 3.00)
 
 add_subdirectory(googletest)
 
-add_executable(runTests
-    ../src/User.cpp
-    ../src/Movie.cpp
-    ../src/MovieList.cpp
-    ../src/Review.cpp
-    ../src/ReviewList.cpp
-    ../src/CastList.cpp
-    ../src/CastMember.cpp
-    ../src/UserMain.cpp
-    test.cpp
-)
-
 add_executable(test
     CastTest.cpp
     MovieTest.cpp
     ReviewTest.cpp
-    ../src/Movie.cpp
-    ../src/MovieList.cpp
-    ../src/CastMember.cpp
-    ../src/CastList.cpp
-    ../src/Review.cpp
-    ../src/ReviewList.cpp
-)
-
-add_executable(runUserMain
+    UserTest.cpp
     ../src/User.cpp
     ../src/Movie.cpp
     ../src/MovieList.cpp
@@ -36,12 +16,9 @@ add_executable(runUserMain
     ../src/ReviewList.cpp
     ../src/CastList.cpp
     ../src/CastMember.cpp
-    ../src/UserMain.cpp
 )
 
-target_link_libraries(runTests gtest gtest_main)
 target_link_libraries(test gtest gtest_main)
-target_link_libraries(runUserMain gtest gtest_main)
 
 
 

@@ -12,7 +12,7 @@ Review Review_List::get_review(int index) {
     return reviews.at(index);
 }
 
-void Review_List::remove_Review(string n, string r) {
+void Review_List::remove_review(string n, string r) {
     vector<Review>::iterator it;
     
  

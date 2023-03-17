@@ -14,7 +14,6 @@ class User {
         Review_List user_reviews;
 
     public:
-        User();
         User(std::string name, std::string pass);
         Movie_List & get_movie_list();
         Review_List & get_review_list();

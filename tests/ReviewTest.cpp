@@ -33,15 +33,15 @@ TEST(ReviewTests, ReviewListRemove) {
     Review_List reviews;
     Review aReview("Brad", "Amazing movie!", 5);
     reviews.add_review(aReview);
-    reviews.remove_Review("Brad", "Amazing movie!");
+    reviews.remove_review("Brad", "Amazing movie!");
     EXPECT_EQ(reviews.get_size(), 0);
     Review bReview("Joe", "Terrible Movie!", 1);
     Review cReview("George", "The movie was okay!", 3);
     reviews.add_review(bReview);
     reviews.add_review(cReview);
-    reviews.remove_Review("Joe", "Terrible Movie!");
+    reviews.remove_review("Joe", "Terrible Movie!");
     EXPECT_TRUE(reviews.get_review(0).get_review() == "The movie was okay!");
-    EXPECT_NO_THROW(reviews.remove_Review("Joe", "Terrible Movie!"));
+    EXPECT_NO_THROW(reviews.remove_review("Joe", "Terrible Movie!"));
     
 
 }
