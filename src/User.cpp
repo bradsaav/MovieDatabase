@@ -5,9 +5,8 @@
 #include <vector>
 #include <string>
 
-User::User(std::string user, std::string pass) {
+User::User(std::string user) {
     this->username = user;
-    this->password = pass;
 }
 
 void User::save_movie_list() {
@@ -19,7 +18,6 @@ void User::save_movie_list() {
     cout << "Movies saving to: " << path << endl;
     moviesFile.open(path);
 
-    moviesFile << password << endl;
     for (i = 0; i < watched_movies.get_size(); i++) {
         moviesFile << watched_movies.get_movie(i).get_name() << endl;
         moviesFile << watched_movies.get_movie(i).get_release_year() << endl;
@@ -54,8 +52,6 @@ void User::save_review_list() {
     cout << "Reviews saving to: " << path << endl;
     reviewsFile.open(path);
 
-    reviewsFile << password << endl;
-
     for (int i = 0; i < user_reviews.get_size(); i++) {
         reviewsFile << user_reviews.get_review(i).get_name() << endl;
         reviewsFile << user_reviews.get_review(i).get_review() << endl;
@@ -73,13 +69,7 @@ void User::load_movie_list() {
     ifstream readMovieList;
     cout << "Opening user list at: " << path << endl;
     readMovieList.open(path);
-    getline(readMovieList, tempString);
-    if (tempString != password) {
-        cout << "Password not equal" << endl;
-        readMovieList.close();
-        return;
-    }
-    
+
     while (getline(readMovieList, tempString)) {
         Movie m;
         m.set_name(tempString);
@@ -137,12 +127,7 @@ void User::load_review_list() {
     ifstream readReviewList;
     cout << "Opening user list at: " << path << endl;
     readReviewList.open(path);
-    getline(readReviewList, tempString);
-    if (tempString != password) {
-        cout << "Password not equal" << endl;
-        readReviewList.close();
-        return;
-    }
+
     while (getline(readReviewList, tempString)) {
         Review r;
         r.set_name(tempString);
@@ -152,7 +137,6 @@ void User::load_review_list() {
         r.set_score(tempNum);
         user_reviews.add_review(r);
     }
-
 }
 
 Movie_List & User::get_movie_list() {
@@ -161,8 +145,4 @@ Movie_List & User::get_movie_list() {
 
 Review_List & User::get_review_list() {
     return user_reviews;
-}
-
-std::string User::print_credentials() {
-    return username + " " + password;
 }

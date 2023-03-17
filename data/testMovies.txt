@@ -1,4 +1,3 @@
-password
 TEST123
 1981
 R

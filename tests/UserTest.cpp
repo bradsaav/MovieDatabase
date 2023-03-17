@@ -4,7 +4,7 @@
 #include <string>
 
 TEST(UserTests, CreateNewUser) {
-    User testUser("test", "password");
+    User testUser("test");
     Movie testMovie;
     testMovie.set_name("TEST123");
     testMovie.set_year(1981);
@@ -29,7 +29,7 @@ TEST(UserTests, CreateNewUser) {
 }
 
 TEST(UserTests, LoadNewUser) {
-    User testUser("test", "password");
+    User testUser("test");
     testUser.load_movie_list();
     testUser.load_review_list();
     EXPECT_EQ(testUser.get_movie_list().get_size(), 2);

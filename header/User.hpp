@@ -9,15 +9,13 @@
 class User {
     private:
         std::string username;
-        std::string password;
         Movie_List watched_movies;
         Review_List user_reviews;
 
     public:
-        User(std::string name, std::string pass);
+        User(std::string name);
         Movie_List & get_movie_list();
         Review_List & get_review_list();
-        std::string print_credentials();
         void save_movie_list();
         void save_review_list();
         void load_movie_list();
