@@ -18,7 +18,7 @@
  
 ## Class Diagram v4.0
 
-![Class Diagram 4.0](https://github.com/cs100/final-project-team-of-people/blob/master/UML%20Diagram%204.0.png)
+![Class Diagram 4.0](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/UML%20Diagram%204.0.png)
 
 ## Class Diagram Description
 > The Movie class creates a movie object. A movie contains a name, a year, genres, directors, and a cast. There exists a composition between CastList class and Movie class because a Movie has a unique CastList and the deletion of a Movie should delete the unique CastList that was generated with it.
@@ -35,7 +35,7 @@
 
 ## SOLID Class Diagram
 
-![SOLID UML Diagram](https://github.com/cs100/final-project-team-of-people/blob/master/SOLID%20UML%20Diagram.png)
+![SOLID UML Diagram](https://github.com/cs100/final-project-team-of-people/blob/master/screenshots/SOLID%20UML%20Diagram.png)
 
 ## SOLID Class Diagram Explaination
 > After reviewing our updated UML Diagram, we tried and applied SOLID principles to create a more improved and optimized version of our UML Diagram. The first principle we thought to apply was the S, the Single Responsibility Principle, where each class is responsible for only one thing. However, we believe that our current UML Diagram already succeeds in this category. For instance, the Movie class, Although the Movie class contains actors/actresses, directors, reviews and ratings, there exists specific classes for the data inside the Movie class that handle their own functions so one class does not hold more than it can handle. 
